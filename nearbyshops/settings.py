@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'nearbyshops.wsgi.application'
 
 DATABASES =  {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nearbyshops',
-        'USER': 'amplifyd1',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'nearbyusers',
+        'USER': 'wesleysprague',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
