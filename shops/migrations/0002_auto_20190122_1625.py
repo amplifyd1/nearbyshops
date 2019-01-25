@@ -7,10 +7,10 @@ from pathlib import Path
 
 DATA_FILENAME = 'data.json'
 def load_data(apps, schema_editor):
-    Shop = app.get_model('shops', 'Shop')
+    Shop = apps.get_model('shops', 'Shop')
     jsonfile = Path(__file__).parents[2] / DATA_FILENAME
 
-     with open(str(jsonfile)) as datafile:
+    with open(str(jsonfile)) as datafile:
         objects = json.load(datafile)
         for obj in objects['elements']:
             try:
@@ -31,4 +31,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+      migrations.RunPython(load_data)
     ]
